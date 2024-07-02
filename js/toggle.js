@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
         toggleIcons.classList.add('hidden');
     }
 
-    toggle.addEventListener('change', function () {
+    toggle.addEventListener('change', () => {
         if (toggle.checked) {
             localStorage.setItem('toggleState', 'true');
             sideBar.classList.add('collapsed');

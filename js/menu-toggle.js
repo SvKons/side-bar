@@ -8,7 +8,7 @@ if (sideBar.classList.contains('collapsed')) {
     sideBarIconsList.classList.remove('hidden');
 }
 
-toggleButton.addEventListener('click', function () {
+toggleButton.addEventListener('click', () => {
     sideBar.classList.toggle('collapsed');
     sideBarTexts.forEach(text => text.classList.toggle('hidden'));
     sideBarIconsList.classList.toggle('hidden');
