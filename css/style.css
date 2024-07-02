@@ -5,6 +5,7 @@
     --basic-black: #000;
     --dark-background: #29343a;
     --basic-hover: #628091;
+    --basic-active: #82a6ba;
     --toggle: #4e88b7;
     --toggle-background: #ccc;
 }
@@ -34,10 +35,15 @@ img {
 /* Header */
 
 .header {
+    position: fixed;
+    top: 0;
+    left: 0;
     min-height: 45px;
     width: 100%;
     padding: 10px 24px;
     background-color: var(--dark-background);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    z-index: 10;
 }
 
 .header__logo {
@@ -48,6 +54,7 @@ img {
 
 .main {
     height: 100vh;
+    padding-top: 60px;
 }
 
 .side-bar {
@@ -57,6 +64,42 @@ img {
     background-color: var(--dark-background);
     transition: width 0.3s;
 }
+
+.side-bar__toggle-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 15px;
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
+.side-bar__toggle-button::before,
+.side-bar__toggle-button::after,
+.side-bar__toggle-button::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    width: 100%;
+    height: 3px;
+    background-color: var(--basic-white);
+    transition: transform 0.3s;
+}
+
+.side-bar__toggle-button::before {
+    top: 12px;
+}
+
+.side-bar__toggle-button::after {
+    bottom: 0;
+}
+
+.side-bar__toggle-button::after {
+    top: 24px;
+    transform: translateY(-50%);
+}
+
 .side-bar.collapsed {
     width: 80px;
 }
@@ -68,6 +111,7 @@ img {
 }
 
 .side-bar__link {
+    position: relative;
     display: flex;
     flex-direction: row;
     gap: 10px;
@@ -78,9 +122,22 @@ img {
 }
 
 .side-bar__link:hover,
-.side-bar__sub-item:hover {
+.side-bar__sub-item:hover,
+.side-bar__button:hover {
     background-color: var(--basic-hover);
     border-radius: 10px;
+}
+
+.side-bar__link:active,
+.side-bar__sub-item:active,
+.side-bar__button:active {
+    background-color: var(--basic-active);
+    border-radius: 10px;
+}
+
+.side-bar__button {
+    width: 40px;
+    height: 36px;
 }
 
 .side-bar__text {
@@ -163,6 +220,13 @@ img {
 }
 
 .side-bar__icons-list.hidden {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.side-bar.collapsed .side-bar__icons-list {
     display: flex;
     flex-direction: column;
     gap: 15px;

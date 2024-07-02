@@ -19,6 +19,8 @@
         <main class="main">
             <section class="main__wrap">
                 <div class="side-bar">
+                    <div class="side-bar__button"><button class="side-bar__toggle-button"></button></div>
+
                     <ul class="side-bar__list">
                         <li class="side-bar__item">
                             <a href="" class="side-bar__link">
@@ -235,13 +237,13 @@
                         </li>
                         <li class="side-bar__item">
                             <a href="" class="side-bar__link">
-                                <img src="./img/notifications.png" alt="Иконка уведомления" />
+                                <img src="./img/notifications.png" alt="Иконка уведомления" class="notification-count" />
                                 <span class="side-bar__text">Уведомления</span>
                             </a>
                         </li>
                         <li class="side-bar__item">
                             <a href="" class="side-bar__link">
-                                <img src="./img/approval.png" alt="Иконка согласования" />
+                                <img src="./img/approval.png" alt="Иконка согласования" class="notification-count" />
                                 <span class="side-bar__text">Согласования</span>
                             </a>
                         </li>
@@ -285,5 +287,7 @@
         </main>
         <script src="./js/main.js"></script>
         <script src="./js/toggle.js"></script>
+        <script src="./js/menu-toggle.js"></script>
+        <script src="./js/count.js"></script>
     </body>
 </html>
